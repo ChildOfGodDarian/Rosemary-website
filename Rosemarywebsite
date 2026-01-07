@@ -1,425 +1,84 @@
-
-# Complete HTML/CSS/JavaScript code for a Rosemary Hair Growth Spray product website
-html_code = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rosemary Hair Growth Spray - Natural Hair Restoration</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        nav a {
-            color: white;
-            text-decoration: none;
-            transition: opacity 0.3s;
-        }
-        
-        nav a:hover {
-            opacity: 0.8;
-        }
-        
-        .hero {
-            background: linear-gradient(135deg, #4a7c2c 0%, #6ba84a 100%);
-            color: white;
-            padding: 6rem 0;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: #ff6b6b;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        
-        .btn:hover {
-            background-color: #ff5252;
-        }
-        
-        .features {
-            padding: 4rem 0;
-            background-color: #f9f9f9;
-        }
-        
-        .features h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #2d5016;
-        }
-        
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        
-        .feature-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .feature-card h3 {
-            color: #2d5016;
-            margin-bottom: 1rem;
-        }
-        
-        .product {
-            padding: 4rem 0;
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-        }
-        
-        .product-image {
-            flex: 1;
-            text-align: center;
-        }
-        
-        .product-image img {
-            max-width: 100%;
-            height: auto;
-        }
-        
-        .product-info {
-            flex: 1;
-        }
-        
-        .product-info h2 {
-            font-size: 2rem;
-            color: #2d5016;
-            margin-bottom: 1rem;
-        }
-        
-        .price {
-            font-size: 2rem;
-            color: #ff6b6b;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-        
-        .ingredients {
-            background-color: #f0f7e8;
-            padding: 2rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-        }
-        
-        .ingredients h3 {
-            color: #2d5016;
-            margin-bottom: 1rem;
-        }
-        
-        .ingredients ul {
-            list-style: none;
-        }
-        
-        .ingredients li {
-            padding: 0.5rem 0;
-            color: #555;
-        }
-        
-        .ingredients li:before {
-            content: "✓ ";
-            color: #4a7c2c;
-            font-weight: bold;
-            margin-right: 0.5rem;
-        }
-        
-        .testimonials {
-            padding: 4rem 0;
-            background-color: #f9f9f9;
-        }
-        
-        .testimonials h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            color: #2d5016;
-            margin-bottom: 3rem;
-        }
-        
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .testimonial {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        
-        .stars {
-            color: #ffc107;
-            margin-bottom: 1rem;
-        }
-        
-        .testimonial p {
-            margin-bottom: 1rem;
-            font-style: italic;
-            color: #666;
-        }
-        
-        .testimonial-author {
-            font-weight: bold;
-            color: #2d5016;
-        }
-        
-        footer {
-            background-color: #2d5016;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-        }
-        
-        @media (max-width: 768px) {
-            nav ul {
-                gap: 1rem;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .product {
-                flex-direction: column;
-            }
-            
-            .feature-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <title>Rosemary Hair Growth Spray</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <nav class="container">
-            <div class="logo">🌿 Rosemary Hair Growth</div>
+        <h1>Rosemary Hair Growth Spray</h1>
+        <nav>
             <ul>
-                <li><a href="#product">Product</a></li>
-                <li><a href="#features">Benefits</a></li>
-                <li><a href="#testimonials">Reviews</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#how-to-use">How to Use</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#order">Order Now</a></li>
             </ul>
         </nav>
     </header>
-    
-    <section class="hero">
-        <div class="container">
-            <h1>Natural Hair Growth Spray</h1>
-            <p>Restore Your Hair's Natural Beauty with Pure Rosemary Extract</p>
-            <button class="btn" onclick="scrollToProduct()">Shop Now</button>
+
+    <section id="hero">
+        <h2>Strengthen and Grow Your Hair Naturally</h2>
+        <p>Discover the power of rosemary for thicker, healthier hair.</p>
+        <button onclick="window.location.href='#order'">Shop Now</button>
+    </section>
+
+    <section id="about">
+        <h2>About Our Spray</h2>
+        <p>Our Rosemary Hair Growth Spray is formulated with natural ingredients to nourish your scalp and promote healthy hair growth. Rosemary oil is known for its ability to improve circulation and stimulate hair follicles.</p>
+        <p><strong>Benefits:</strong></p>
+        <ul>
+            <li>Promotes hair growth</li>
+            <li>Strengthens hair strands</li>
+            <li>Reduces hair thinning</li>
+            <li>Adds shine and volume</li>
+            <li>Made with natural ingredients</li>
+        </ul>
+    </section>
+
+    <section id="how-to-use">
+        <h2>How to Use</h2>
+        <p>For best results, use the spray daily:</p>
+        <ol>
+            <li>Shake well before use.</li>
+            <li>Spray directly onto your scalp, focusing on areas of thinning.</li>
+            <li>Gently massage the product into your scalp with your fingertips.</li>
+            <li>Do not rinse. Style as usual.</li>
+        </ol>
+    </section>
+
+    <section id="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial">
+            <p>"I've been using this spray for a month, and I can already see a difference! My hair feels thicker and healthier."</p>
+            <p><strong>- Sarah K.</strong></p>
+        </div>
+        <div class="testimonial">
+            <p>"The scent is amazing, and it really works! My hair growth has definitely improved."</p>
+            <p><strong>- John D.</strong></p>
         </div>
     </section>
-    
-    <section class="features" id="features">
-        <div class="container">
-            <h2>Why Choose Our Rosemary Spray?</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🌱</div>
-                    <h3>100% Natural</h3>
-                    <p>Made with pure rosemary extract and organic ingredients</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Fast Acting</h3>
-                    <p>Visible results in as little as 4 weeks</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">✨</div>
-                    <h3>No Side Effects</h3>
-                    <p>Gentle formula suitable for all hair types</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔬</div>
-                    <h3>Clinically Tested</h3>
-                    <p>Proven results backed by scientific research</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💰</div>
-                    <h3>Affordable</h3>
-                    <p>Premium quality at budget-friendly prices</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🚚</div>
-                    <h3>Fast Shipping</h3>
-                    <p>Free shipping on orders over $50</p>
-                </div>
+
+    <section id="order">
+        <h2>Order Your Rosemary Hair Growth Spray</h2>
+        <p>Get your bottle of our potent hair growth formula today!</p>
+        <div class="product-info">
+            <img src="product-image.jpg" alt="Rosemary Hair Growth Spray Bottle" width="200">
+            <div>
+                <h3>Rosemary Hair Growth Spray</h3>
+                <p><strong>Price: $19.99</strong></p>
+                <p>Includes one 4oz bottle.</p>
+                <button id="buy-button">Add to Cart</button>
             </div>
         </div>
     </section>
-    
-    <section id="product">
-        <div class="container product">
-            <div class="product-image">
-                <div style="width: 250px; height: 350px; background: linear-gradient(135deg, #4a7c2c 0%, #6ba84a 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">
-                    🌿
-                </div>
-            </div>
-            <div class="product-info">
-                <h2>Premium Rosemary Hair Growth Spray</h2>
-                <p>Transform your hair with our scientifically formulated rosemary hair growth spray. Our unique blend combines the power of rosemary oil with other natural botanicals to stimulate hair growth and improve scalp health.</p>
-                
-                <div class="price">$39.99</div>
-                
-                <button class="btn" onclick="addToCart()">Add to Cart</button>
-                
-                <div class="ingredients">
-                    <h3>Key Ingredients:</h3>
-                    <ul>
-                        <li>Rosemary Essential Oil - Stimulates hair follicles</li>
-                        <li>Peppermint Extract - Improves scalp circulation</li>
-                        <li>Biotin - Strengthens hair structure</li>
-                        <li>Argan Oil - Deep nourishment</li>
-                        <li>Vitamin E - Antioxidant protection</li>
-                        <li>Aloe Vera - Soothes and hydrates scalp</li>
-                    </ul>
-                </div>
-                
-                <h3>How to Use:</h3>
-                <p>Apply 2-3 sprays directly to the scalp, massage gently for 2 minutes, and let dry. Use twice daily for best results.</p>
-            </div>
-        </div>
-    </section>
-    
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <h2>What Our Customers Say</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial">
-                    <div class="stars">★★★★★</div>
-                    <p>"I noticed new hair growth within 3 weeks! This product is amazing and smells wonderful."</p>
-                    <div class="testimonial-author">- Sarah M.</div>
-                </div>
-                <div class="testimonial">
-                    <div class="stars">★★★★★</div>
-                    <p>"Finally found a product that actually works. My hairline has significantly improved!"</p>
-                    <div class="testimonial-author">- James T.</div>
-                </div>
-                <div class="testimonial">
-                    <div class="stars">★★★★★</div>
-                    <p>"Love the natural ingredients. My scalp feels healthier and my hair is growing faster."</p>
-                    <div class="testimonial-author">- Emma L.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <footer id="contact">
-        <div class="container">
-            <p>&copy; 2024 Rosemary Hair Growth. All rights reserved.</p>
-            <p>Email: support@rosemaryhairgrowth.com | Phone: 1-800-HAIR-GROW</p>
-            <p>Free shipping on all orders | 30-day money-back guarantee</p>
-        </div>
+
+    <footer>
+        <p>&copy; 2023 Rosemary Hair Growth Spray. All rights reserved.</p>
     </footer>
-    
-    <script>
-        function scrollToProduct() {
-            document.getElementById('product').scrollIntoView({ behavior: 'smooth' });
-        }
-        
-        function addToCart() {
-            alert('✓ Rosemary Hair Growth Spray added to cart!\\nContinue shopping or proceed to checkout.');
-        }
-    </script>
+
+    <script src="script.js"></script>
 </body>
 </html>
-"""
-
-print("=== ROSEMARY HAIR GROWTH SPRAY WEBSITE ===")
-print("\nComplete HTML website code generated successfully!")
-print("\nFeatures included:")
-print("✓ Responsive design (mobile-friendly)")
-print("✓ Professional navigation header")
-print("✓ Hero section with call-to-action")
-print("✓ 6 feature cards with benefits")
-print("✓ Product section with ingredients")
-print("✓ Customer testimonials")
-print("✓ Footer with contact info")
-print("✓ Smooth scrolling navigation")
-print("✓ Modern gradient styling")
-print("✓ Hover effects and animations")
-print("\nTo use this code:")
-print("1. Copy the HTML code below")
-print("2. Save as 'index.html'")
-print("3. Open in a web browser")
-print("\n" + "="*50 + "\n")
-print(ht
